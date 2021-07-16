@@ -1,19 +1,46 @@
 <!DOCTYPE html>
 <html>
     <head>
+        <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
         <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@500&amp;family=Roboto:wght@600&amp;display=swap" rel="stylesheet">
+        <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
         <link rel="stylesheet" href="style.css">
-        <title></title>
+        <script src="index.js"></script>
+        <title>EZ-CAMPER</title>
     </head>
     <body>
-        <h1>Insert Random Company Name</h1>
+        <h1>EZ-CAMPER</h1>
         <h2>
             The Easiest Way to Find Your Next Getaway!
         </h2>
-        <div class="searchContainer">
-            <input type="text" id="keywordField" placeholder="Enter Keywords">
-            <button type="submit" id="submit"></button>
+        <form><br>
+        <div class="searchContainer"">
+            <input type="text" id="keywordField" ">
+            <button type="button" id="submit" onclick="addParameterName()">Search</button>
+        </form>
         </div>
+    </div>
+</div>
+        <section id="resultsContainer">
+                        
+        </section>
+        <footer class="footer">
+
+        </footer>
+        <script>
+            //AOS.init()
+            function getParameterByName(name, url = window.location.href) 
+            {
+                name = name.replace(/[\[\]]/g, '\\$&');
+                var regex = new RegExp('[?&]' + name + '(=([^&#]*)|&|#|$)'),
+                results = regex.exec(url);
+                if (!results) return null;
+                if (!results[2]) return '';
+                return decodeURIComponent(results[2].replace(/\+/g, ' '));
+            }
+            searchForResults(getParameterByName('k'))
+
+        </script>
     </body>
 </html>
 
