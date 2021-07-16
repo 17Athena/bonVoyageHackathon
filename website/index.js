@@ -1,10 +1,5 @@
-/*var search
-function showCurrentValue(event)
-{
-    const value = event.target.value;
-    search = value;    
-    searchForResults(search)
-}*/
+var token = '';
+
 
 function addParameterName()
 {
@@ -12,6 +7,11 @@ function addParameterName()
 }
 
 
+
+function getCampsiteInfo(id)
+{
+    
+}
 
 
 function searchForResults(keyword)
@@ -24,7 +24,7 @@ function searchForResults(keyword)
     {
         resultContainer.innerHTML = '';
         var xhr = new XMLHttpRequest()
-        xhr.open('GET', 'https://developer.nps.gov/api/v1/campgrounds?limit=50&api_key=*****', true)
+        xhr.open('GET', 'https://developer.nps.gov/api/v1/campgrounds?limit=50&api_key=' + token, true)
         xhr.send()        
         xhr.onload = function() {   
             var data = JSON.parse(xhr.responseText)
