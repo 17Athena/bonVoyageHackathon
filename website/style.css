@@ -37,6 +37,11 @@ h2
     color: white;
 }
 
+option
+{
+    background-color: rgba(0, 0, 0, 0.345)
+}
+
 .searchContainer
 {
     margin-top: 60px;
@@ -48,8 +53,26 @@ h2
 {
     text-align: center;
     width: 400px;
-    height: 35px;
-    
+    height: 35px;    
+    border: none;
+    box-shadow: 0 0 1rem 0 rgba(0, 0, 0, .2); 
+    border-radius: 30px;
+    background-color: rgba(255, 255, 255, 0.119);  
+    backdrop-filter: blur(5px);
+    font-family: "Poppins", sans-serif;
+    color: white;
+}
+
+
+
+#stateField
+{
+    font-family: "Poppins", sans-serif;
+    color: white;
+    margin-left: 10px;
+    text-align: center;
+    width: 130px;
+    height: 35px;    
     border: none;
     box-shadow: 0 0 1rem 0 rgba(0, 0, 0, .2); 
     border-radius: 30px;
@@ -66,17 +89,20 @@ h2
     border: none;
     box-shadow: 0 0 1rem 0 rgba(0, 0, 0, .2); 
     border-radius: 30px;
-    background-color: rgba(255, 255, 255, 0.119);  
+    background-color: rgba(255, 255, 255, 0.557);  
     backdrop-filter: blur(5px);
+    font-family: "Poppins", sans-serif;
+    color: rgb(2, 70, 0);
 }
 
 
 
 .result
 {
+    text-decoration: none;  
+    margin: none;
     padding-bottom: 30px;
-    margin-left: 25%;
-    margin-right: 25%;  
+    margin: auto;
     width: 50%;
     max-width: 800px;
     margin-top: 50px;
@@ -89,13 +115,14 @@ h2
 
 .result:hover
 {
-    transform: scale(1.2);
+    transform: scale(1.05);
 }
 
 .result h1
 {
     font-size: 30px;
     color: white;
+
 }
 
 
@@ -107,6 +134,12 @@ h2
     font-family: "Poppins", sans-serif;
     font-size: 15px;
     color: white;
+
+}
+
+a
+{
+    text-decoration: none;
 }
 
 .result img

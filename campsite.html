@@ -12,12 +12,31 @@
             <section id="informationContainer"></section>
             <iframe id="map"></iframe> 
         </section>
-        
+        <section id="lower">
+            <div id="left">
+                <div data-skyscanner-widget="SearchWidget"></div>
+<script src="https://widgets.skyscanner.net/widget-server/js/loader.js" async></script>
+            </div>
+            <div id="right">
+                
+            </div>
+        </section>
         
         <script>
-            searchCampsiteById('EA81BC45-C361-437F-89B8-5C89FB0D0F86')
+            function getParameterByName(name, url = window.location.href) 
+            {
+                name = name.replace(/[\[\]]/g, '\\$&');
+                var regex = new RegExp('[?&]' + name + '(=([^&#]*)|&|#|$)'),
+                results = regex.exec(url);
+                if (!results) return null;
+                if (!results[2]) return '';
+                return decodeURIComponent(results[2].replace(/\+/g, ' '));
+            }
+            searchCampsiteById(getParameterByName('id'), getParameterByName('state'))
+            flightData('NJ', 'NY', 'date')
         </script>
 
+            
 
     </body>
 </html>
