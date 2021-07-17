@@ -1,5 +1,7 @@
 var XMLHttpRequest = require("xmlhttprequest").XMLHttpRequest;
 
+
+
 var url  = require('url');
 var fs   = require('fs');
 var querystring = require('path');
@@ -36,13 +38,15 @@ const requestListener = function (req, res) {
                 console.log("updating")
                  docRef.update({
                      clicks: doc.data().clicks + 1,
-                     rating: doc.data().rating
+                     rating: doc.data().rating,
+                     ratingCount: doc.data().ratingCount
                   });
             } else {
                 console.log("creating new")
                 docRef.set({
-                    clicks:1,
-                    rating: 0
+                    clicks:1.0,
+                    rating: 0.0,
+                    ratingCount: 0.0
                 });
             }
         })        
@@ -62,7 +66,36 @@ const requestListener = function (req, res) {
             }
         })  
     }
+    else if(pathName.includes('/addRating'))
+    {
+        var userRating = parseInt(query.rating)
+        var locId = query.location
+        const docRef = db.collection('locations').doc(locId)
+        docRef.get().then((doc) => {
+            if (doc.exists) {                
+                console.log("updating rating")
+                var newRatingCount = doc.data().ratingCount + 1
+                console.log("New Rating Count:" + newRatingCount)
+                var x = (doc.data().ratingCount * doc.data().rating) + userRating
+                console.log("Total Rating Values:" + x)
+                var newRating = ((doc.data().ratingCount * doc.data().rating) + userRating) / (newRatingCount)
 
+                 docRef.update({
+                     clicks: doc.data().clicks,
+                     rating: newRating,
+                     ratingCount: newRatingCount
+                  });
+            } else {
+                console.log("creating new child for rating")
+                docRef.set({
+                    clicks:1.0,
+                    rating: userRating,
+                    ratingCount: 1.0
+                });
+            }
+        })
+
+    }
 
     function getWeather(zipCode)
     {

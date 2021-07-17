@@ -131,7 +131,7 @@ body
 {
     text-align: center;
     font-size: 60px;
-    transform: translateY(-50px);
+    transform: translateY(-60px);
 }
 
 #ratingContainer span:hover
@@ -145,5 +145,14 @@ body
     color: black;
     font-size: 30px;
     margin-top: 30px;
+    text-align: center;
+}
+
+#imgdescription
+{
+    font-family: "Poppins", sans-serif;
+    font-size: 10px;
+    color: black;
+    transform: translateY(-50px);
     text-align: center;
 }

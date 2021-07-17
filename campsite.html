@@ -19,8 +19,9 @@
             </div>
             <div id="right">
                 <h1>How Crowded Will This Location Be?</h1>
-                <div id="imgContainer">
+                <div id="imgContainer">                    
                 </div>
+                <p id="imgdescription">Based off of weather, season, temperature, user ratings, website activity & more</p>
                 <div id="ratingContainer">
                     <span onclick="rate(1)">&#9733;</span>
                     <span onclick="rate(2)">&#9733;</span>
@@ -43,9 +44,15 @@
                 return decodeURIComponent(results[2].replace(/\+/g, ' '));
             }
             searchCampsiteById(getParameterByName('id'), getParameterByName('stateCode'))
-            function rate()
+            function rate(userRating)
             {
-                
+                var rateXhr = new XMLHttpRequest()
+                rateXhr.open('GET', 'http://localhost:8080/addRating?location=' + getParameterByName('id') + '&rating=' + userRating)
+                rateXhr.send()
+                document.getElementById('ratingContainer').style.display = 'none'
+                rateXhr.onload = function() {
+                    
+                }
             }
         </script>
 

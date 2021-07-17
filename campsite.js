@@ -35,11 +35,16 @@ function searchCampsiteById(id, stateCode)
 
 
          var serverXhr = new XMLHttpRequest()
-         serverXhr.open('GET', 'http://localhost:8080/updateClicks?location=' + id + "&zip=" + data.data[0].addresses[0].postalCode, true)
+         serverXhr.open('GET', 'http://localhost:8080/updateClicks?location=' + id + "&zip=" + stateCode /*data.data[0].addresses[0].postalCode*/, true)
          serverXhr.send()
          serverXhr.onload = function() {
             var serverData = JSON.parse(serverXhr.responseText)
+
             var crowdedRating = serverData.finalScore
+            var locationRating = serverData.Rating
+            var ratingText = document.createElement('p')
+            description.innerHTML += '</br></br>' + "Our User Rating: " + locationRating +'/5 Stars'
+            
             var rightBox = document.getElementById('imgContainer');
             var meterImage = document.createElement('img')
             if(crowdedRating < 2)
