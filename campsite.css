@@ -86,9 +86,12 @@ body
     margin-right: 2.5%;
     margin-top: 40px;
     width: 52.5%;
-    height: 400px;
+    height: 350px;
     background-color: rgb(242, 233, 186);
     border-radius: 30px;
+    padding-left: 100px;
+    padding-right: 100px;
+    padding-top: 50px;
 }
 
 #lower #right
@@ -100,14 +103,47 @@ body
     height: 400px;
     background-color: rgb(255, 255, 255);
     border-radius: 30px;
-    
+    display: block;
 }
 
-#lower #right > img
+
+#lower #right #imgContainer > img
 {
     margin-top: 20px;
-    margin-left: 25%;
     width: 50%;
+    margin-left: 25%;
     height: auto;
     object-fit: cover;
+    transform: translateY(-30px);
+}
+
+#lower #right #imgContainer
+{
+    display: flex;
+}
+#lower #right #ratingContainer
+{
+    display: flex;
+    justify-content: center;
+}
+
+#ratingContainer
+{
+    text-align: center;
+    font-size: 60px;
+    transform: translateY(-50px);
+}
+
+#ratingContainer span:hover
+{
+    color: rgb(130, 130, 18);
+}
+
+#lower #right > h1
+{
+    font-family: "Poppins", sans-serif;
+    color: black;
+    font-size: 30px;
+    margin-top: 30px;
+    text-align: center;
 }

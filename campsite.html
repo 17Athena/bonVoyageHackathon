@@ -14,11 +14,21 @@
         </section>
         <section id="lower">
             <div id="left">
-                <div data-skyscanner-widget="SearchWidget"></div>
+                <div data-skyscanner-widget="SearchWidget" id="flightWidget"></div>
 <script src="https://widgets.skyscanner.net/widget-server/js/loader.js" async></script>
             </div>
             <div id="right">
-                
+                <h1>How Crowded Will This Location Be?</h1>
+                <div id="imgContainer">
+                </div>
+                <div id="ratingContainer">
+                    <span onclick="rate(1)">&#9733;</span>
+                    <span onclick="rate(2)">&#9733;</span>
+                    <span onclick="rate(3)">&#9733;</span>
+                    <span onclick="rate(4)">&#9733;</span>
+                    <span onclick="rate(5)">&#9733;</span>
+
+                </div>
             </div>
         </section>
         
@@ -32,8 +42,11 @@
                 if (!results[2]) return '';
                 return decodeURIComponent(results[2].replace(/\+/g, ' '));
             }
-            searchCampsiteById(getParameterByName('id'), getParameterByName('state'))
-            flightData('NJ', 'NY', 'date')
+            searchCampsiteById(getParameterByName('id'), getParameterByName('stateCode'))
+            function rate()
+            {
+                
+            }
         </script>
 
             

@@ -1,4 +1,3 @@
-var token = ''
 
 
 function addParameterName()
