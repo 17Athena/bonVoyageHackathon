@@ -1,6 +1,7 @@
 var XMLHttpRequest = require("xmlhttprequest").XMLHttpRequest;
 
-
+var weatherAPIKey = '58402fb2f7344bad89824757211707'
+var token = 'YNj4HhWdLXGcHwciw29IltEBqcdK6ydb63enDFyb';
 
 var url  = require('url');
 var fs   = require('fs');
@@ -10,7 +11,7 @@ const Firestore = require('@google-cloud/firestore')
 
 const db = new Firestore({
     projectId: 'poetic-world-320005',
-    keyFilename: '/Users/vivekisukapalli/Downloads/poetic-world-320005-b0a30e86b47c.json'
+    keyFilename: 'keypair.json'
 })
 
 
@@ -95,6 +96,9 @@ const requestListener = function (req, res) {
             }
         })
 
+    }
+    else {
+        res.end("Failure")
     }
 
     function getWeather(zipCode)

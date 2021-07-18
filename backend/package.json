@@ -1,0 +1,12 @@
+{
+    "name": "awayfrom.tech",
+    "version": "1.0.0",
+    "scripts": {
+        "start": "node nodeBackend.js"
+    },
+    "dependencies": {
+        "@google-cloud/firestore": "^4.13.2",
+        "firebase": "^8.7.1",
+        "xmlhttprequest": "^1.8.0"
+    }
+}
